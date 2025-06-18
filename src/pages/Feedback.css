@@ -1,17 +1,32 @@
 .feed-container {
-  backdrop-filter: blur(10px);
-  background-color: #212121;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  background-color: rgba(46, 46, 46, 0.9);
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 400px;
   left: 50%;
   padding: 50px 35px;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  width: 380px;
+  box-shadow: 
+      0 0 7px #bebcbc,
+      0 0 15px #fff,
+      0 0 21px #fff,
+      0 0 20px blueviolet,
+      0 0 42px blueviolet,
+      0 0 62px blueviolet,
+      0 0 30px blueviolet,
+      0 0 51px blueviolet;
+}
+
+.feedback-text {
+  margin: 25px 0;
 }
 
 .btn-container {
@@ -19,6 +34,7 @@
   display: flex;
   flex-direction: column;
   height: 70%;
+  width: 100%;
   justify-content: flex-end;
 }
 
@@ -27,4 +43,10 @@ button {
   color: white;
   font-weight: 600;
   width: 60%;
+}
+
+@media (max-width: 600px) {
+  .feed-container {
+    width: 80%;
+  }
 }

@@ -18,9 +18,9 @@ class Feedback extends Component {
     return (
       <div className="feed-container">
         <Header />
-        <span data-testid="feedback-text">{message}</span>
-        <p data-testid="feedback-total-score">{score}</p>
-        <p data-testid="feedback-total-question">{assertions}</p>
+        <span className="feedback-text">{message}</span>
+        <p data-testid="feedback-total-score">Score: {score}</p>
+        <p data-testid="feedback-total-question">Answers correct: {assertions}</p>
         <div className="btn-container">
           <button
             type="button"

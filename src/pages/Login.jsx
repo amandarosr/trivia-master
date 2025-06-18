@@ -1,27 +1,32 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { login } from '../Redux/Actions';
-import './Login.css';
-import img from '../trivia.png';
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { login } from "../Redux/Actions";
+import "./Login.css";
+// import img from "../trivia.png";
 
 class Login extends React.Component {
   state = {
-    name: '',
-    email: '',
+    name: "",
+    email: "",
     playDisabled: true,
   };
 
   handleChange = ({ target }) => {
     const { name, value } = target;
-    this.setState({
-      [name]: value,
-    }, this.inputValidation);
+    this.setState(
+      {
+        [name]: value,
+      },
+      this.inputValidation
+    );
   };
 
   inputValidation = () => {
     const { name, email } = this.state;
-    const emailCorreto = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email);
+    const emailCorreto = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(
+      email
+    );
     const validations = [name.length, email.length, emailCorreto];
     const validInputs = validations.every((v) => v);
     this.setState({
@@ -31,17 +36,19 @@ class Login extends React.Component {
 
   fetchToken = async () => {
     const { history, dispatch } = this.props;
-    const response = await fetch('https://opentdb.com/api_token.php?command=request');
+    const response = await fetch(
+      "https://opentdb.com/api_token.php?command=request"
+    );
     const data = await response.json();
     const { token } = data;
-    localStorage.setItem('token', token);
+    localStorage.setItem("token", token);
     dispatch(login({ ...this.state }));
-    history.push('/game');
+    history.push("/game");
   };
 
   btnConfig = () => {
     const { history } = this.props;
-    history.push('/settings');
+    history.push("/settings");
   };
 
   render() {
@@ -49,7 +56,7 @@ class Login extends React.Component {
     /* const { history } = this.props; */
     return (
       <div className="paginaLogin">
-        <img className="logo" src={ img } alt="trivia" />
+        <h1 className="title">TRIVIA MASTER</h1>
         <div className="login">
           <input
             id="input-name"
@@ -57,8 +64,8 @@ class Login extends React.Component {
             name="name"
             type="text"
             data-testid="input-player-name"
-            value={ name }
-            onChange={ this.handleChange }
+            value={name}
+            onChange={this.handleChange}
             placeholder="Insert your name"
           />
           <input
@@ -66,27 +73,28 @@ class Login extends React.Component {
             name="email"
             type="email"
             data-testid="input-gravatar-email"
-            value={ email }
-            onChange={ this.handleChange }
+            value={email}
+            onChange={this.handleChange}
             placeholder="Insert your email"
           />
-          <button
-            data-testid="btn-play"
-            disabled={ playDisabled }
-            onClick={ this.fetchToken }
-            className={ playDisabled ? 'grey' : 'white' }
-          >
-            Play
-          </button>
-          <button
-            type="button"
-            data-testid="btn-settings"
-            onClick={ this.btnConfig }
-            className="white"
-          >
-            Settings
-
-          </button>
+          <div className="login-btn-div">
+            <button
+              data-testid="btn-play"
+              disabled={playDisabled}
+              onClick={this.fetchToken}
+              className={playDisabled ? "grey" : "white"}
+            >
+              Play
+            </button>
+            <button
+              type="button"
+              data-testid="btn-settings"
+              onClick={this.btnConfig}
+              className="white"
+            >
+              Settings
+            </button>
+          </div>
         </div>
       </div>
     );

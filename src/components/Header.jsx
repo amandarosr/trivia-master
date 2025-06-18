@@ -18,14 +18,13 @@ class Header extends Component {
   }
 
   componentDidUpdate() {
-    const { gravatarEmail, name, score } = this.props;
-    const hash = md5(gravatarEmail).toString();
-    const endPoint = `https://www.gravatar.com/avatar/${hash}`;
+    const { name, score } = this.props;
+    // const hash = md5(gravatarEmail).toString();
+    // const endPoint = `https://www.gravatar.com/avatar/${hash}`;
 
     const dataR = {
       nome: name,
       ponto: score,
-      img: endPoint,
     };
     localStorage.setItem('dados', JSON.stringify(dataR));
   /*   const data2 = JSON.parse(localStorage.getItem('dados')) || [];
@@ -37,8 +36,8 @@ class Header extends Component {
 
   render() {
     const { name, score } = this.props;
-    const { hash } = this.state;
-    const endPoint = `https://www.gravatar.com/avatar/${hash}`;
+    // const { hash } = this.state;
+    // const endPoint = `https://www.gravatar.com/avatar/${hash}`;
     /*    const dataR = {
       nome: name,
       ponto: score,
@@ -57,11 +56,11 @@ class Header extends Component {
 
     return (
       <div className="header-trivia">
-        <img
+        {/* <img
           data-testid="header-profile-picture"
           alt="Profile"
           src={ endPoint }
-        />
+        /> */}
         <span data-testid="header-player-name">{` ${name}`}</span>
         <span data-testid="header-score">{` ${score}`}</span>
       </div>

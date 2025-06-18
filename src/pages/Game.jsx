@@ -1,15 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import Header from '../components/Header';
-import { getScore, saveAssertions, resetScore } from '../Redux/Actions';
-import './Game.css';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import Header from "../components/Header";
+import { getScore, saveAssertions, resetScore } from "../Redux/Actions";
+import "./Game.css";
+import watch from "../images/watch.png";
 
 class Game extends React.Component {
   state = {
-    results: '',
+    results: "",
     qIndex: 0,
-    answers: '',
+    answers: "",
     ativar: false,
     timeLeft: 30,
     disabled: false,
@@ -19,42 +20,54 @@ class Game extends React.Component {
   async componentDidMount() {
     const { dispatch } = this.props;
     dispatch(resetScore(0));
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     const { qIndex } = this.state;
     this.startCounter();
 
     try {
-      const response = await fetch(`https://opentdb.com/api.php?amount=5&token=${token}`);
+      const response = await fetch(
+        `https://opentdb.com/api.php?amount=5&token=${token}`
+      );
       const data = await response.json();
       const num = 3;
       if (data.response_code === num) {
         const { history } = this.props;
-        localStorage.removeItem('token');
-        history.push('/');
+        localStorage.removeItem("token");
+        history.push("/");
       }
       const entities = {
-        '&#039;': '\'',
-        '&quot;': '"',
-        '&ntilde;': 'ñ',
-        '&eacute;': 'é',
-        '&amp;': '&',
-        '&uuml;': 'ü',
+        "&#039;": "'",
+        "&quot;": '"',
+        "&ntilde;": "ñ",
+        "&eacute;": "é",
+        "&amp;": "&",
+        "&uuml;": "ü",
       };
       const replaced = data.results.map((element) => {
-        const question = element.question.replace(/&#?\w+;/g, (match) => entities[match] || match);
-        const correct = element.correct_answer.replace(/&#?\w+;/g, (match) => entities[match] || match);
-        const incorrect = element.incorrect_answers.map((elementTwo) => elementTwo.replace(/&#?\w+;/g, (match) => entities[match] || match));
+        const question = element.question.replace(
+          /&#?\w+;/g,
+          (match) => entities[match] || match
+        );
+        const correct = element.correct_answer.replace(
+          /&#?\w+;/g,
+          (match) => entities[match] || match
+        );
+        const incorrect = element.incorrect_answers.map((elementTwo) =>
+          elementTwo.replace(/&#?\w+;/g, (match) => entities[match] || match)
+        );
         return { ...element, question, correct, incorrect };
       });
-      const answersArray = [{ correct: replaced[qIndex].correct_answer },
-        ...replaced[qIndex].incorrect_answers];
+      const answersArray = [
+        { correct: replaced[qIndex].correct_answer },
+        ...replaced[qIndex].incorrect_answers,
+      ];
       const randomizedAnswers = this.shuffleArray(answersArray);
       this.setState({
         results: replaced,
         answers: randomizedAnswers,
       });
     } catch (err) {
-      console.log('Um erro foi capturado.', err);
+      console.log("Um erro foi capturado.", err);
     }
   }
 
@@ -63,7 +76,7 @@ class Game extends React.Component {
 
     if (timeLeft === 0 && !disabled) {
       clearInterval(this.countdown);
-      console.log('parou');
+      console.log("parou");
       this.setState({
         disabled: true,
         ativar: true,
@@ -92,22 +105,27 @@ class Game extends React.Component {
     });
   };
 
-  shuffleArray = (array) => { // código do stackoverflow (Knuth Shuffle)
+  shuffleArray = (array) => {
+    // código do stackoverflow (Knuth Shuffle)
     let currentIndex = array.length;
     let randomIndex;
     while (currentIndex !== 0) {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
       [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+        array[randomIndex],
+        array[currentIndex],
+      ];
     }
     return array;
   };
 
   updateAnswers = () => {
     const { qIndex, results } = this.state;
-    const answersArray = [{ correct: results[qIndex].correct_answer },
-      ...results[qIndex].incorrect_answers];
+    const answersArray = [
+      { correct: results[qIndex].correct_answer },
+      ...results[qIndex].incorrect_answers,
+    ];
     const randomizedAnswers = this.shuffleArray(answersArray);
     this.setState({
       answers: randomizedAnswers,
@@ -120,15 +138,18 @@ class Game extends React.Component {
     const maxIndex = 4;
     if (qIndex === maxIndex) {
       dispatch(saveAssertions(assertions));
-      history.push('/feedback');
+      history.push("/feedback");
     }
     this.startCounter();
-    this.setState((prevState) => ({
-      ativar: !prevState.ativar,
-      qIndex: prevState.qIndex + 1,
-      timeLeft: 30,
-      disabled: false,
-    }), this.updateAnswers);
+    this.setState(
+      (prevState) => ({
+        ativar: !prevState.ativar,
+        qIndex: prevState.qIndex + 1,
+        timeLeft: 30,
+        disabled: false,
+      }),
+      this.updateAnswers
+    );
   };
 
   correctAnswers = () => {
@@ -145,17 +166,17 @@ class Game extends React.Component {
     const multiplierThree = 3;
 
     switch (results[qIndex].difficulty) {
-    case 'easy':
-      dispatch(getScore(timeLeft + standartPoints));
-      break;
-    case 'medium':
-      dispatch(getScore(standartPoints + (timeLeft * multiplierTwo)));
-      break;
-    case 'hard':
-      dispatch(getScore(standartPoints + (timeLeft * multiplierThree)));
-      break;
-    default:
-      return true;
+      case "easy":
+        dispatch(getScore(timeLeft + standartPoints));
+        break;
+      case "medium":
+        dispatch(getScore(standartPoints + timeLeft * multiplierTwo));
+        break;
+      case "hard":
+        dispatch(getScore(standartPoints + timeLeft * multiplierThree));
+        break;
+      default:
+        return true;
     }
     this.clickOn();
     this.correctAnswers();
@@ -167,32 +188,29 @@ class Game extends React.Component {
       <div className="game-container">
         <div className="header">
           <Header />
-          { results.length ? <h1>{ timeLeft }</h1> : <h3>Loading...</h3> }
+          <div className="time-div">
+            <img src={watch} alt="stop-watch" />
+            {results.length ? <h1>{timeLeft}</h1> : <h3>Loading...</h3>}
+          </div>
         </div>
-        { results.length ? (
+        {results.length ? (
           <div className="qa-container">
-            <h2
-              data-testid="question-category"
-              className="game-category"
-            >
-              { results[qIndex].category }
+            <h2 data-testid="question-category" className="game-category">
+              {results[qIndex].category}
             </h2>
-            <h3
-              data-testid="question-text"
-              className="game-question"
-            >
-              { results[qIndex].question }
+            <h3 data-testid="question-text" className="game-question">
+              {results[qIndex].question}
             </h3>
             <div data-testid="answer-options" className="answers-container">
-              { answers.map((a, i) => {
-                if (typeof (a) === 'object') {
+              {answers.map((a, i) => {
+                if (typeof a === "object") {
                   return (
                     <button
                       data-testid="correct-answer"
-                      onClick={ this.getPoints }
-                      className={ ativar ? 'correto' : '' }
-                      key={ i }
-                      disabled={ disabled }
+                      onClick={this.getPoints}
+                      className={ativar ? "correto" : ""}
+                      key={i}
+                      disabled={disabled}
                     >
                       {a.correct}
                     </button>
@@ -200,28 +218,28 @@ class Game extends React.Component {
                 }
                 return (
                   <button
-                    key={ i }
-                    onClick={ this.clickOn }
-                    className={ ativar ? 'errado' : '' }
-                    data-testid={ `wrong-answer-${i}` }
-                    disabled={ disabled }
+                    key={i}
+                    onClick={this.clickOn}
+                    className={ativar ? "errado" : ""}
+                    data-testid={`wrong-answer-${i}`}
+                    disabled={disabled}
                   >
                     {a}
                   </button>
                 );
-              }) }
+              })}
             </div>
-            { ativar ? (
+            {ativar ? (
               <button
                 data-testid="btn-next"
-                onClick={ this.nextBtnClick }
+                onClick={this.nextBtnClick}
                 className="next"
               >
                 Next
               </button>
-            ) : null }
+            ) : null}
           </div>
-        ) : null }
+        ) : null}
       </div>
     );
   }
