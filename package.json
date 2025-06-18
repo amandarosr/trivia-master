@@ -1,5 +1,6 @@
 {
-  "name": "trivia-react-redux",
+  "homepage": "https://amandarosr.github.io/trivia-master",
+  "name": "trivia-master",
   "version": "0.1.0",
   "private": true,
   "engines": {
