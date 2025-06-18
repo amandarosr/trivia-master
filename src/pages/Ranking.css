@@ -1,10 +1,9 @@
 .rank-container {
   align-items: center;
   backdrop-filter: blur(10px);
-  background-color: #212121;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  background-color: rgba(46, 46, 46, 0.9);
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -16,6 +15,15 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
+  box-shadow: 
+      0 0 7px #bebcbc,
+      0 0 15px #fff,
+      0 0 21px #fff,
+      0 0 20px blueviolet,
+      0 0 42px blueviolet,
+      0 0 62px blueviolet,
+      0 0 30px blueviolet,
+      0 0 51px blueviolet;
 }
 
 table, th, td {
@@ -24,7 +32,7 @@ table, th, td {
 }
 
 img {
-  height: 35px;
+  height: 30px;
 }
 
 span {
@@ -34,6 +42,7 @@ span {
 .nameRow {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -50,4 +59,10 @@ button {
   background-color: purple;
   color: white;
   font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .rank-container {
+    width: 80%;
+  }
 }
