@@ -1,21 +1,32 @@
-*, *:before, *:after {
-  box-sizing: content-box;
-  margin: 0;
-  padding: 0;
+.paginaLogin {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .login {
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.13);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 0 60px rgba(8, 7, 16, 0.6);
-  left: 50%;
-  margin-top: 30px;
+  background-color: rgba(46, 46, 46, 0.9);
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
   padding: 50px 35px;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+  width: 270px;
+  box-shadow: 
+      0 0 7px #bebcbc,
+      0 0 15px #fff,
+      0 0 21px #fff,
+      0 0 20px blueviolet,
+      0 0 42px blueviolet,
+      0 0 62px blueviolet,
+      0 0 30px blueviolet,
+      0 0 51px blueviolet;
 }
 
 input {
@@ -37,8 +48,12 @@ input {
   text-align: center;
 }
 
+.login-btn-div {
+  width: 80%;
+} 
+
 .white {
-  background-color: rgb(105, 36, 170);
+  background-color: purple;
   border-radius: 5px;
   color: white;
   cursor: pointer;

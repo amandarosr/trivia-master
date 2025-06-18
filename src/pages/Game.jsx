@@ -175,7 +175,7 @@ class Game extends React.Component {
               data-testid="question-category"
               className="game-category"
             >
-              { results[qIndex].category }
+              {results[qIndex].category}
             </h2>
             <h3
               data-testid="question-text"
