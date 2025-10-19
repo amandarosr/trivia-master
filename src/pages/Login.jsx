@@ -86,14 +86,14 @@ class Login extends React.Component {
             >
               Play
             </button>
-            <button
+            {/* <button
               type="button"
               data-testid="btn-settings"
               onClick={this.btnConfig}
               className="white"
             >
               Settings
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
