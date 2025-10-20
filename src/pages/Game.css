@@ -1,35 +1,19 @@
 .game-container {
-  align-items: center;
-  background-color: rgba(46, 46, 46, 0.9);
-  border: 5px solid rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
   color: white;
   display: flex;
   flex-direction: column;
-  height: 465px;
-  left: 50%;
-  padding: 40px 30px;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 450px;
-  box-shadow: 
-      0 0 7px #bebcbc,
-      0 0 15px #fff,
-      0 0 21px #fff,
-      0 0 20px blueviolet,
-      0 0 42px blueviolet,
-      0 0 62px blueviolet,
-      0 0 30px blueviolet,
-      0 0 51px blueviolet;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 20px;
+  padding-bottom: 20px;
 }
 
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 20px;
-  width: 80%;
+  align-items: center;
+  width: 50%;
 }
 
 .time-div {
@@ -53,13 +37,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
   max-width: fit-content;
 }
 
 .game-category, .game-question {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
+  width: 70%;
 }
 
 .answers-container {
@@ -78,10 +63,9 @@ button {
   box-sizing: border-box;
   color: #1f2133;
   cursor: pointer;
-  font-family: monospace;
   font-size: 18px;
   font-weight: 600;
-  height: 48px;
+  height: 60px;
   line-height: 1;
   list-style: none;
   margin-top: 13px;
@@ -117,18 +101,17 @@ button:active {
 }
 
 .next {
-  background-color: purple;
+  background: none;
+  color: #ffbe3a;
   border-radius: 4px;
   border-width: 0;
   box-shadow: rgba(45, 35, 66, 0.8) 0 2px 4px , rgba(45, 35, 66, 0.6) 0 7px 13px -3px
     #d6d6e7 0 -3px 0 inset;
   box-sizing: border-box;
-  color: white;
-  font-size: 18px;
+  font-family: Gameshow;
+  font-size: 50px;
   font-weight: 600;
-  height: 45px;
   margin-top: 20px;
-  width: 100px;
 }
 
 @media (max-width: 600px) {

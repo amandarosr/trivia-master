@@ -54,7 +54,15 @@ class Ranking extends Component {
 
     return (
       <div className="rank-container">
-        <h1 data-testid="ranking-title">Ranking</h1>
+        <span className="ranking-title-span">
+          <span className="ranking-title" style={{color:"#8a7bb5"}}>r</span>
+          <span className="ranking-title" style={{color:"#aed157"}}>a</span>
+          <span className="ranking-title" style={{color:"#e5552c"}}>n</span>
+          <span className="ranking-title" style={{color:"#ffbe3a"}}>k</span>
+          <span className="ranking-title" style={{color:"#8a7bb5"}}>i</span>
+          <span className="ranking-title" style={{color:"#aed157"}}>n</span>
+          <span className="ranking-title" style={{color:"#e5552c"}}>g</span>
+        </span>
         <table>
           <thead>
             <tr>
@@ -69,10 +77,6 @@ class Ranking extends Component {
                 <td>{ index + 1 }</td>
                 <td>
                   <div className="nameRow">
-                    <img
-                      src={ playe.img }
-                      alt="Profile"
-                    />
                     <span data-testid={ `player-name-${index}` }>{playe.nome}</span>
 
                   </div>
@@ -87,9 +91,10 @@ class Ranking extends Component {
         <button
           type="button"
           data-testid="btn-go-home"
-          onClick={ () => history.push('/') }
+          onClick={ () => history.push('/feedback') }
+          className="inicio-btn"
         >
-          Inicio
+          back
         </button>
       </div>
     );

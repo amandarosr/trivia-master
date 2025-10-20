@@ -1,45 +1,40 @@
 .paginaLogin {
-  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding-bottom: 30px;
 }
 
 .login {
-  background-color: rgba(46, 46, 46, 0.9);
-  border: 5px solid rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
-  padding: 50px 35px;
-  align-items: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
-  height: 300px;
-  width: 270px;
-  box-shadow: 
-      0 0 7px #bebcbc,
-      0 0 15px #fff,
-      0 0 21px #fff,
-      0 0 20px blueviolet,
-      0 0 42px blueviolet,
-      0 0 62px blueviolet,
-      0 0 30px blueviolet,
-      0 0 51px blueviolet;
+  padding: 30px;
+}
+
+.title-span {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 130px;
+  font-family: Gameshow;
 }
 
 input {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 5%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
   color: rgb(229, 229, 229);
   display: block;
   font-size: 14px;
   font-weight: 300;
   height: 40px;
-  margin-top: 8px;
   padding: 0 10px;
-  width: 90%;
+  margin-bottom: 5px;
+  width: 220px;
 }
 
 ::placeholder {
@@ -49,29 +44,39 @@ input {
 }
 
 .login-btn-div {
-  width: 80%;
+  width: 160px;
 } 
 
 .white {
-  background-color: purple;
+  background: none;
+  color: #ffbd3ae0;
   border-radius: 5px;
-  color: white;
   cursor: pointer;
-  font-size: 18px;
-  font-weight: 600;
+  font-family: Gameshow;
+  font-size: 55px;
   margin-top: 20px;
-  padding: 15px 0;
+  height: 60px;
   width: 100%;
 }
 
 .grey {
-  background-color: grey;
+  background: none;
+  color: grey;
   border-radius: 5px;
-  color: white;
   cursor: pointer;
-  font-size: 18px;
-  font-weight: 600;
+  font-family: Gameshow;
+  font-size: 55px;
   margin-top: 20px;
-  padding: 15px 0;
+  height: 60px;
   width: 100%;
+}
+
+@media (max-width: 600px) {
+  /* .title-span {
+    margin: 0;
+  }
+
+  .title {
+    font-size: 110px;
+  } */
 }
