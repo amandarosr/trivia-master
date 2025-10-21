@@ -1,5 +1,5 @@
 @font-face {
-  font-family: Technoma;
+  font-family: ArialNarrow7;
   src: url('./images/arial_narrow_7.ttf');
 }
 
@@ -9,7 +9,7 @@
 }
 
 * {
-  font-family: Technoma;
+  font-family: ArialNarrow7;
   font-weight: 400;
 }
 
