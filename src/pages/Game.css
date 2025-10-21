@@ -122,6 +122,13 @@ button:active {
 
 @media (max-width: 600px) {
   .game-container {
-    width: 80%;
+    width: 98%;
+    padding-top: 10px;
+  }
+
+  .next {
+    font-size: 30px;
+    width: 160px;
+    height: 65px;
   }
 }

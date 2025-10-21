@@ -77,11 +77,12 @@ input {
 }
 
 @media (max-width: 600px) {
-  /* .title-span {
-    margin: 0;
-  }
-
+  
   .title {
     font-size: 110px;
-  } */
+  }
+
+  input {
+    width: 300px;
+  }
 }

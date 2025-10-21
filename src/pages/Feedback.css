@@ -40,4 +40,8 @@
   .feed-container {
     width: 80%;
   }
+
+  .btn-container button {
+    font-size: 50px;
+  }
 }
