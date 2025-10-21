@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/trivia-master/static/css/main.d523d3a6.css",
-    "main.js": "/trivia-master/static/js/main.dc6fefd4.js",
-    "static/media/cartoon-wall.jpg": "/trivia-master/static/media/cartoon-wall.1352a719cd1ea1514f6a.jpg",
-    "static/media/NEON____.TTF": "/trivia-master/static/media/NEON____.b0f581c427424c101e20.TTF",
+    "main.css": "/trivia-master/static/css/main.a7b14aee.css",
+    "main.js": "/trivia-master/static/js/main.55e9afdd.js",
+    "static/media/backg.jpg": "/trivia-master/static/media/backg.ec8239c999d0f5e080bd.jpg",
+    "static/media/arial_narrow_7.ttf": "/trivia-master/static/media/arial_narrow_7.c517ff1b3aefc001fcb9.ttf",
+    "static/media/Gameshow.ttf": "/trivia-master/static/media/Gameshow.d99451e38733aa230132.ttf",
     "index.html": "/trivia-master/index.html",
-    "main.d523d3a6.css.map": "/trivia-master/static/css/main.d523d3a6.css.map",
-    "main.dc6fefd4.js.map": "/trivia-master/static/js/main.dc6fefd4.js.map"
+    "main.a7b14aee.css.map": "/trivia-master/static/css/main.a7b14aee.css.map",
+    "main.55e9afdd.js.map": "/trivia-master/static/js/main.55e9afdd.js.map"
   },
   "entrypoints": [
-    "static/css/main.d523d3a6.css",
-    "static/js/main.dc6fefd4.js"
+    "static/css/main.a7b14aee.css",
+    "static/js/main.55e9afdd.js"
   ]
 }
