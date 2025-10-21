@@ -1,18 +1,25 @@
-/* @font-face {
-  font-family: NEON;
-  src: url('./images/NEON____.TTF');
-} */
+@font-face {
+  font-family: Technoma;
+  src: url('./images/arial_narrow_7.ttf');
+}
 
 @font-face {
   font-family: Gameshow;
   src: url('./images/Gameshow.ttf');
 }
 
+* {
+  font-family: Technoma;
+  font-weight: 400;
+}
+
 body {
-  background-image: url("./images/spotlight.png");
-  background-color: #150b0c;
+  background-image: url("./images/backg.jpg");
   background-size: cover;
+  background-position: 50%;
+  /* background-attachment: fixed; */
   letter-spacing: 0.05em;
+  overflow-y: hidden;
 }
 
 button {

@@ -1,15 +1,20 @@
 .feed-container {
+  background-color: rgb(21, 0, 17, 0.9);
+  box-shadow: rgba(255, 255, 255, 0.6) 0 3px 7px;
+  border: 7px dotted #FEF7BC;
+  border-radius: 10px;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 400px;
-  padding: 50px 35px;
+  padding: 40px 35px;
   width: 350px;
 }
 
 .feedback-text {
+  font-size: 22px;
   margin: 25px 0;
 }
 
@@ -27,6 +32,7 @@
   color: #ffbe3a;
   font-family: Gameshow;
   font-size: 55px;
+  height: 60px;
   width: 100%;
 }
 

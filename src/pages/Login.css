@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 30px;
+  padding: 50px 0 15px;
 }
 
 .login {
@@ -15,8 +15,11 @@
 }
 
 .title-span {
+  background-color: #2C0036;
+  border: 8px dotted #FEF7BC;
+  box-shadow: rgba(255, 255, 255, 0.6) 0 3px 7px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .title {
@@ -26,15 +29,16 @@
 
 input {
   background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 5px;
   color: rgb(229, 229, 229);
+  border-radius: 5px;
   display: block;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 300;
-  height: 40px;
+  text-align: center;
+  height: 50px;
   padding: 0 10px;
   margin-bottom: 5px;
-  width: 220px;
+  width: 350px;
 }
 
 ::placeholder {
@@ -44,30 +48,31 @@ input {
 }
 
 .login-btn-div {
-  width: 160px;
+  width: 50%;
 } 
 
 .white {
-  background: none;
-  color: #ffbd3ae0;
+  background-color: #150011;
+  border: 5px dotted #FEF7BC;
+  box-shadow: rgba(255, 255, 255, 0.6) 0 3px 7px;
   border-radius: 5px;
+  color: #fffbdb;
   cursor: pointer;
-  font-family: Gameshow;
-  font-size: 55px;
+  font-size: 30px;
   margin-top: 20px;
-  height: 60px;
+  height: 70px;
   width: 100%;
 }
 
 .grey {
-  background: none;
-  color: grey;
+  background-color: grey;
+  /* border: 4px dotted #6e6b52; */
   border-radius: 5px;
+  color: dimgray;
   cursor: pointer;
-  font-family: Gameshow;
-  font-size: 55px;
+  font-size: 30px;
   margin-top: 20px;
-  height: 60px;
+  height: 70px;
   width: 100%;
 }
 

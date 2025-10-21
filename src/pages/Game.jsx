@@ -235,7 +235,7 @@ class Game extends React.Component {
                 onClick={this.nextBtnClick}
                 className="next"
               >
-                next
+                NEXT
               </button>
             ) : null}
           </div>

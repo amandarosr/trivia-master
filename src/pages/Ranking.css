@@ -1,11 +1,15 @@
 .rank-container {
-  align-items: center;
-  color: white;
+  background-color: rgb(21, 0, 17, 0.9);
+  box-shadow: rgba(255, 255, 255, 0.6) 0 3px 7px;
+  border: 7px dotted #FEF7BC;
+  border-radius: 10px;
+  color: aliceblue;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  height: 400px;
   justify-content: space-around;
-  padding: 50px 35px;
+  padding: 40px 35px;
+  min-height: 70%;
   width: 400px;
 }
 
@@ -15,8 +19,13 @@
 }
 
 table, th, td {
-  border: 1px solid white;
+  border: 4px solid aliceblue;
   border-collapse: collapse;
+}
+
+.table-div {
+  height: 300px;
+  overflow-y: scroll;
 }
 
 img {
@@ -42,6 +51,7 @@ th {
 .inicio-btn {
   background: none;
   color: #ffbe3a;
+  height: 60px;
   font-size: 60px;
   font-family: Gameshow;
 }

@@ -98,7 +98,7 @@ class Login extends React.Component {
               onClick={this.fetchToken}
               className={playDisabled ? "grey" : "white"}
             >
-              start
+              START
             </button>
           </div>
         </div>

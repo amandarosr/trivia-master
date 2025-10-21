@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import md5 from 'crypto-js/md5';
-import { connect } from 'react-redux';
-import { getSaved, savePlayer } from '../helpers/storage';
-import './Ranking.css';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import md5 from "crypto-js/md5";
+import { connect } from "react-redux";
+import { getSaved, savePlayer } from "../helpers/storage";
+import "./Ranking.css";
 
 class Ranking extends Component {
   state = {
@@ -55,43 +55,60 @@ class Ranking extends Component {
     return (
       <div className="rank-container">
         <span className="ranking-title-span">
-          <span className="ranking-title" style={{color:"#8a7bb5"}}>r</span>
-          <span className="ranking-title" style={{color:"#aed157"}}>a</span>
-          <span className="ranking-title" style={{color:"#e5552c"}}>n</span>
-          <span className="ranking-title" style={{color:"#ffbe3a"}}>k</span>
-          <span className="ranking-title" style={{color:"#8a7bb5"}}>i</span>
-          <span className="ranking-title" style={{color:"#aed157"}}>n</span>
-          <span className="ranking-title" style={{color:"#e5552c"}}>g</span>
+          <span className="ranking-title" style={{ color: "#8a7bb5" }}>
+            r
+          </span>
+          <span className="ranking-title" style={{ color: "#aed157" }}>
+            a
+          </span>
+          <span className="ranking-title" style={{ color: "#e5552c" }}>
+            n
+          </span>
+          <span className="ranking-title" style={{ color: "#ffbe3a" }}>
+            k
+          </span>
+          <span className="ranking-title" style={{ color: "#8a7bb5" }}>
+            i
+          </span>
+          <span className="ranking-title" style={{ color: "#aed157" }}>
+            n
+          </span>
+          <span className="ranking-title" style={{ color: "#e5552c" }}>
+            g
+          </span>
         </span>
-        <table>
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Name</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            {players.map((playe, index) => (
-              <tr key={ index }>
-                <td>{ index + 1 }</td>
-                <td>
-                  <div className="nameRow">
-                    <span data-testid={ `player-name-${index}` }>{playe.nome}</span>
-
-                  </div>
-                </td>
-                <td>
-                  <p data-testid={ `player-score-${index}` }>{playe.ponto}</p>
-                </td>
+        <div className="table-div">
+          <table>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {players.map((playe, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>
+                    <div className="nameRow">
+                      <span data-testid={`player-name-${index}`}>
+                        {playe.nome}
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <p data-testid={`player-score-${index}`}>{playe.ponto}</p>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <button
           type="button"
           data-testid="btn-go-home"
-          onClick={ () => history.push('/feedback') }
+          onClick={() => history.push("/feedback")}
           className="inicio-btn"
         >
           back
@@ -102,7 +119,6 @@ class Ranking extends Component {
 }
 
 Ranking.propTypes = {
-
   name: PropTypes.string.isRequired,
   score: PropTypes.number.isRequired,
   gravatarEmail: PropTypes.string.isRequired,
