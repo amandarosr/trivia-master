@@ -56,7 +56,21 @@ class Login extends React.Component {
     /* const { history } = this.props; */
     return (
       <div className="paginaLogin">
-        <h1 className="title">TRIVIA MASTER</h1>
+        <span className="title-span">
+          <span className="title" style={{color:"#e5552c"}}>t</span>
+          <span className="title" style={{color:"#ffbe3a"}}>r</span>
+          <span className="title" style={{color:"#8a7bb5"}}>i</span>
+          <span className="title" style={{color:"#aed157"}}>v</span>
+          <span className="title" style={{color:"#e5552c"}}>i</span>
+          <span className="title" style={{color:"#ffbe3a"}}>a</span>
+          <br/>
+          <span className="title" style={{color:"#aed157"}}>m</span>
+          <span className="title" style={{color:"#e5552c"}}>a</span>
+          <span className="title" style={{color:"#ffbe3a"}}>s</span>
+          <span className="title" style={{color:"#8a7bb5"}}>t</span>
+          <span className="title" style={{color:"#aed157"}}>e</span>
+          <span className="title" style={{color:"#e5552c"}}>r</span>
+        </span>
         <div className="login">
           <input
             id="input-name"
@@ -84,15 +98,7 @@ class Login extends React.Component {
               onClick={this.fetchToken}
               className={playDisabled ? "grey" : "white"}
             >
-              Play
-            </button>
-            <button
-              type="button"
-              data-testid="btn-settings"
-              onClick={this.btnConfig}
-              className="white"
-            >
-              Settings
+              START
             </button>
           </div>
         </div>

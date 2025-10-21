@@ -1,45 +1,44 @@
 .paginaLogin {
-  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 50px 0 15px;
 }
 
 .login {
-  background-color: rgba(46, 46, 46, 0.9);
-  border: 5px solid rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
-  padding: 50px 35px;
-  align-items: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
-  height: 300px;
-  width: 270px;
-  box-shadow: 
-      0 0 7px #bebcbc,
-      0 0 15px #fff,
-      0 0 21px #fff,
-      0 0 20px blueviolet,
-      0 0 42px blueviolet,
-      0 0 62px blueviolet,
-      0 0 30px blueviolet,
-      0 0 51px blueviolet;
+  padding: 30px;
+}
+
+.title-span {
+  background-color: #2C0036;
+  border: 8px dotted #FEF7BC;
+  box-shadow: rgba(255, 255, 255, 0.6) 0 3px 7px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 130px;
+  font-family: Gameshow;
 }
 
 input {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 5%;
+  background-color: rgba(0, 0, 0, 0.7);
   color: rgb(229, 229, 229);
+  border-radius: 5px;
   display: block;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 300;
-  height: 40px;
-  margin-top: 8px;
+  text-align: center;
+  height: 50px;
   padding: 0 10px;
-  width: 90%;
+  margin-bottom: 5px;
+  width: 350px;
 }
 
 ::placeholder {
@@ -49,29 +48,41 @@ input {
 }
 
 .login-btn-div {
-  width: 80%;
+  width: 50%;
 } 
 
 .white {
-  background-color: purple;
+  background-color: #150011;
+  border: 5px dotted #FEF7BC;
+  box-shadow: rgba(255, 255, 255, 0.6) 0 3px 7px;
   border-radius: 5px;
-  color: white;
+  color: #fffbdb;
   cursor: pointer;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 30px;
   margin-top: 20px;
-  padding: 15px 0;
+  height: 70px;
   width: 100%;
 }
 
 .grey {
   background-color: grey;
+  /* border: 4px dotted #6e6b52; */
   border-radius: 5px;
-  color: white;
+  color: dimgray;
   cursor: pointer;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 30px;
   margin-top: 20px;
-  padding: 15px 0;
+  height: 70px;
   width: 100%;
+}
+
+@media (max-width: 600px) {
+  
+  .title {
+    font-size: 110px;
+  }
+
+  input {
+    width: 300px;
+  }
 }
